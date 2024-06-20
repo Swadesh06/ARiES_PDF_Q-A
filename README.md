@@ -4,7 +4,7 @@ This student project under ARiES club of IITR was aimed at making a working pipe
 
 ![aries_image](https://github.com/Swadesh06/ARiES_PDF_Q-A/assets/129365476/87a38342-8690-42fd-9981-02c83c9942e8)
 
-# Description 📝
+## Description 📝
 
 This project demonstrates a streamlined pipeline for answering user queries from PDFs using advanced AI tools and language models, specifically Meta AI’s LLaMA 3 model (8B parameters). Langchain was utilized for creating vector databases from documents, emphasizing efficiency.
 
@@ -54,17 +54,26 @@ Dependencies:
 
 ## Brief listing of techniques and tools used for the project: 
 
-- Gathering of larger datasets
-- Tokenizinng text for each model
-- optmizing model for reduced complexity
-- Random Weight Samling to address overfiiting
-- Gradiet clipping
-- Optimizing tokensation lengths for BERT and RoBERTa by implementing function to decide max_len value
-- Tracking progress by progress lines inside the code
-- Saving the model weights and tokenized vakues to reduce time taken for subsequent runs in tokensiing
-- Saved model first into kaggle working directory and then downloaded and uploaded into input directory to enable offline model running
+- Dataset used for training : Alpaca cleaned
+- Unsloth library used for faster fine-tuning and also memory management
+  - Optimisations within the library to improve speed and effecency are:
+    
+    1. Manual Autograd ensures that the backpropagation process is highly optimized for the specific architecture,               reducing training time.
+    2. Chained Matrix Multiplication speeds up the key matrix operations in the transformer layers, improving throughput.
+    3. Triton Language Kernels optimize the low-level operations on the GPU, making the most of the available hardware           resources.
+    4. Flash Attention makes the attention mechanism more efficient, allowing the model to process larger inputs and             focus on important data, enhancing both speed and accuracy.
 
+- Recursive Character Cplitting for splitting exttacted text form the document into smaller chunks of data
+- Optimizing max_length for context window for LLaMA3 - 8B to increase context size from 8192, using RoPE scaling, which after much slow implemeentations was found implemnted in the Unsloth Library. Context length can theoretically be taken to any size , but make sure to then train it on data suiting the context window otherwise the answers seem to turn nonsensical for very high context window lengths
+- Sentence Transformers (all-MiniLM-L6-v2) used for text embeddings (384 dimensional) of the chunks.
+- FAISS (FAcebook AI Similarity Search) vector database used for creating a database with the embedded chunk vectors of   the document(s).
+- Similarity search retrieval (with score) is used to retrieve relevant documents to the user query
+- Retrieval Augmented Generation (RAG) used for compiling the user query and assigning question, inout data for context, and response roles
+- Saving the LoRA adapter of the model to later download it faster and with computational ease
+- Save the document database so that you don't have to create the database once again for the same document(s).
 
+## Documentation 📑
+- HLD : https://docs.google.com/document/d/1TSAjd81z32yjWSlfPjMyWigkMKMOzUjUYDxBR5RmJyI/edit?usp=sharing
 
 
 
