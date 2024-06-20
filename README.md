@@ -1,46 +1,58 @@
 # ARiES_PDF_Q-A
+## What it does ❓
 This student project under ARiES club of IITR was aimed at making a working pipeline where in modern AI tools and Language models can be used to perform the task of answering user queries and questions from a pdf
 
 ![aries_image](https://github.com/Swadesh06/ARiES_PDF_Q-A/assets/129365476/87a38342-8690-42fd-9981-02c83c9942e8)
 
+# Description 📝
 
+This project demonstrates a streamlined pipeline for answering user queries from PDFs using advanced AI tools and language models, specifically Meta AI’s LLaMA 3 model (8B parameters). Langchain was utilized for creating vector databases from documents, emphasizing efficiency.
 
-## Dataset links:
+The entire project was executed on Google Colab using only free resources. After numerous iterations and experiments, I optimized the methods for compactness and efficiency. The final code is clean and concise after numerous iterations, highlighting the project's practicality and ease of use without relying on APIs or extensive internet access.
+
+## Dataset links 🔗
 Alpaca Cleaned Dataset used for Instruction Finetuning - [https://www.kaggle.com/competitions/llm-detect-ai-generated-text/data](https://huggingface.co/datasets/yahma/alpaca-cleaned)
 
 
-## About the data
-### Given Datset-
+## About the data 📊
 -Columns for question (user query) , input for context (data retrieve from vector database while inference) , and response columns to train the adequate response
 
 
+## Installations 🔧
 
-## Setup:
+Dependencies:
 
-- setup for each model used is given separately below:
+- Python==3.10.12
+- langchain==0.0.190
+- langchain-community==0.0.3
+- pypdf==3.8.1
+- fitz==0.0.1.dev2
+- pymupdf==1.19.6
+- unstructured==0.6.4
+- python-magic==0.4.27
+- faiss-gpu==1.7.3
+- transformers==4.27.4
+- torch==2.0.1
+- huggingface_hub==0.14.1
+- python-dotenv==1.0.0
+- streamlit==1.22.0
+- tiktoken==0.4.0
+- protobuf==3.20.3
+- sentence-transformers==2.2.2
+- xformers==0.0.16
+- trl==0.8.0
+- peft==0.3.0
+- accelerate==0.20.3
+- unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+- bitsandbytes==0.38.1
 
-  ### DistilBERT(public score 0.803) :
-  
-<img width="294" alt="Screenshot 2024-01-15 at 10 00 56 PM" src="https://github.com/Swadesh06/LLM-AI-Genrated-Text-Classification/assets/129365476/17bc2e7f-6a64-48fd-9220-3383c62e517b">
+## Setup ⚙️
 
-In this setup I also downloaded the output files after the first Internet "on" run and uploaded them into the input directory so as to save the effort of having to have a first run with intenet on whenever I opened the notebpok again.
+<img width="709" alt="Screenshot 2024-06-20 at 1 04 01 PM" src="https://github.com/Swadesh06/ARiES_PDF_Q-A/assets/129365476/b60247b8-c0fe-4380-a9d5-800b40dfaabe">
 
 
- ### RoBERTa (public score 0.672 ):
- 
-<img width="392" alt="Screenshot 2024-01-15 at 10 10 20 PM" src="https://github.com/Swadesh06/LLM-AI-Genrated-Text-Classification/assets/129365476/be025669-4a2c-48a2-bf24-ed7c42a69f80">
 
-RoBERTa performed poorer despite being a more adavnced model due to overfitting and lack of optimization to make the suitable tokenizing changes. I implemented them later but some changes were left to be accomodated and time didn't allow for them.
-
-### BERT (public score N/A) :
-
-<img width="408" alt="Screenshot 2024-01-15 at 10 04 34 PM" src="https://github.com/Swadesh06/LLM-AI-Genrated-Text-Classification/assets/129365476/5576d19f-0469-4718-bbe4-329841930082">
-
-BERT took a very long time to train and I was unsucessful in getting a complete first run on the dataset , so I couldn't save the model in time for submission, and had to leave the tokenzier files in the output directory itself.
-
-I did manage to save the tokenized values but they were later deemed unnecessary due to the firther optimisations I made in the tokenisation process of BERT
-
-## Steps Taken:
+## Brief listing of techniques and tools used for the project: 
 
 - Gathering of larger datasets
 - Tokenizinng text for each model
