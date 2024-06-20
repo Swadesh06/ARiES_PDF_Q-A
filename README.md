@@ -11,7 +11,7 @@ This project demonstrates a streamlined pipeline for answering user queries from
 The entire project was executed on Google Colab using only free resources. After numerous iterations and experiments, I optimized the methods for compactness and efficiency. The final code is clean and concise after numerous iterations, highlighting the project's practicality and ease of use without relying on APIs or extensive internet access.
 
 ## Dataset links 🔗
-Alpaca Cleaned Dataset used for Instruction Finetuning - [https://www.kaggle.com/competitions/llm-detect-ai-generated-text/data](https://huggingface.co/datasets/yahma/alpaca-cleaned)
+Alpaca Cleaned Dataset used for Instruction Finetuning - [[https://www.kaggle.com/competitions/llm-detect-ai-generated-text/data](https://huggingface.co/datasets/yahma/alpaca-cleaned)](https://huggingface.co/datasets/yahma/alpaca-cleaned)
 
 
 ## About the data 📊
