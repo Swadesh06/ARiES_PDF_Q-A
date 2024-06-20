@@ -15,7 +15,7 @@ Alpaca Cleaned Dataset used for Instruction Finetuning - [https://www.kaggle.com
 
 
 ## About the data 📊
--Columns for question (user query) , input for context (data retrieve from vector database while inference) , and response columns to train the adequate response
+Columns for question (user query) , input for context (data retrieve from vector database while inference) , and response columns to train the adequate response
 
 
 ## Installations 🔧
@@ -52,7 +52,7 @@ Dependencies:
 
 
 
-## Brief listing of techniques and tools used for the project: 
+## Brief listing of techniques and tools used for the project 💡
 
 - Dataset used for training : Alpaca cleaned
 - Unsloth library used for faster fine-tuning and also memory management
